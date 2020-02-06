@@ -94,511 +94,158 @@ func (m *Empty) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Empty proto.InternalMessageInfo
 
-type CmdSet struct {
-	File                 string   `protobuf:"bytes,1,opt,name=file,proto3" json:"file,omitempty"`
-	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
-	Val                  []byte   `protobuf:"bytes,3,opt,name=val,proto3" json:"val,omitempty"`
+type CmdGenerateToken struct {
+	UserID               string   `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *CmdSet) Reset()         { *m = CmdSet{} }
-func (m *CmdSet) String() string { return proto.CompactTextString(m) }
-func (*CmdSet) ProtoMessage()    {}
-func (*CmdSet) Descriptor() ([]byte, []int) {
+func (m *CmdGenerateToken) Reset()         { *m = CmdGenerateToken{} }
+func (m *CmdGenerateToken) String() string { return proto.CompactTextString(m) }
+func (*CmdGenerateToken) ProtoMessage()    {}
+func (*CmdGenerateToken) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00212fb1f9d3bf1c, []int{2}
 }
 
-func (m *CmdSet) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CmdSet.Unmarshal(m, b)
+func (m *CmdGenerateToken) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CmdGenerateToken.Unmarshal(m, b)
 }
-func (m *CmdSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CmdSet.Marshal(b, m, deterministic)
+func (m *CmdGenerateToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CmdGenerateToken.Marshal(b, m, deterministic)
 }
-func (m *CmdSet) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CmdSet.Merge(m, src)
+func (m *CmdGenerateToken) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CmdGenerateToken.Merge(m, src)
 }
-func (m *CmdSet) XXX_Size() int {
-	return xxx_messageInfo_CmdSet.Size(m)
+func (m *CmdGenerateToken) XXX_Size() int {
+	return xxx_messageInfo_CmdGenerateToken.Size(m)
 }
-func (m *CmdSet) XXX_DiscardUnknown() {
-	xxx_messageInfo_CmdSet.DiscardUnknown(m)
+func (m *CmdGenerateToken) XXX_DiscardUnknown() {
+	xxx_messageInfo_CmdGenerateToken.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_CmdSet proto.InternalMessageInfo
+var xxx_messageInfo_CmdGenerateToken proto.InternalMessageInfo
 
-func (m *CmdSet) GetFile() string {
+func (m *CmdGenerateToken) GetUserID() string {
 	if m != nil {
-		return m.File
+		return m.UserID
 	}
 	return ""
 }
 
-func (m *CmdSet) GetKey() []byte {
-	if m != nil {
-		return m.Key
-	}
-	return nil
-}
-
-func (m *CmdSet) GetVal() []byte {
-	if m != nil {
-		return m.Val
-	}
-	return nil
-}
-
-type CmdGet struct {
-	File                 string   `protobuf:"bytes,1,opt,name=file,proto3" json:"file,omitempty"`
-	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+type CmdValidateToken struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *CmdGet) Reset()         { *m = CmdGet{} }
-func (m *CmdGet) String() string { return proto.CompactTextString(m) }
-func (*CmdGet) ProtoMessage()    {}
-func (*CmdGet) Descriptor() ([]byte, []int) {
+func (m *CmdValidateToken) Reset()         { *m = CmdValidateToken{} }
+func (m *CmdValidateToken) String() string { return proto.CompactTextString(m) }
+func (*CmdValidateToken) ProtoMessage()    {}
+func (*CmdValidateToken) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00212fb1f9d3bf1c, []int{3}
 }
 
-func (m *CmdGet) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CmdGet.Unmarshal(m, b)
+func (m *CmdValidateToken) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CmdValidateToken.Unmarshal(m, b)
 }
-func (m *CmdGet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CmdGet.Marshal(b, m, deterministic)
+func (m *CmdValidateToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CmdValidateToken.Marshal(b, m, deterministic)
 }
-func (m *CmdGet) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CmdGet.Merge(m, src)
+func (m *CmdValidateToken) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CmdValidateToken.Merge(m, src)
 }
-func (m *CmdGet) XXX_Size() int {
-	return xxx_messageInfo_CmdGet.Size(m)
+func (m *CmdValidateToken) XXX_Size() int {
+	return xxx_messageInfo_CmdValidateToken.Size(m)
 }
-func (m *CmdGet) XXX_DiscardUnknown() {
-	xxx_messageInfo_CmdGet.DiscardUnknown(m)
+func (m *CmdValidateToken) XXX_DiscardUnknown() {
+	xxx_messageInfo_CmdValidateToken.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_CmdGet proto.InternalMessageInfo
+var xxx_messageInfo_CmdValidateToken proto.InternalMessageInfo
 
-func (m *CmdGet) GetFile() string {
+func (m *CmdValidateToken) GetToken() string {
 	if m != nil {
-		return m.File
+		return m.Token
 	}
 	return ""
 }
 
-func (m *CmdGet) GetKey() []byte {
-	if m != nil {
-		return m.Key
-	}
-	return nil
-}
-
-type ResBytes struct {
-	Bytes                []byte   `protobuf:"bytes,1,opt,name=bytes,proto3" json:"bytes,omitempty"`
+type ResGenerateToken struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *ResBytes) Reset()         { *m = ResBytes{} }
-func (m *ResBytes) String() string { return proto.CompactTextString(m) }
-func (*ResBytes) ProtoMessage()    {}
-func (*ResBytes) Descriptor() ([]byte, []int) {
+func (m *ResGenerateToken) Reset()         { *m = ResGenerateToken{} }
+func (m *ResGenerateToken) String() string { return proto.CompactTextString(m) }
+func (*ResGenerateToken) ProtoMessage()    {}
+func (*ResGenerateToken) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00212fb1f9d3bf1c, []int{4}
 }
 
-func (m *ResBytes) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_ResBytes.Unmarshal(m, b)
+func (m *ResGenerateToken) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ResGenerateToken.Unmarshal(m, b)
 }
-func (m *ResBytes) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_ResBytes.Marshal(b, m, deterministic)
+func (m *ResGenerateToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ResGenerateToken.Marshal(b, m, deterministic)
 }
-func (m *ResBytes) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ResBytes.Merge(m, src)
+func (m *ResGenerateToken) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ResGenerateToken.Merge(m, src)
 }
-func (m *ResBytes) XXX_Size() int {
-	return xxx_messageInfo_ResBytes.Size(m)
+func (m *ResGenerateToken) XXX_Size() int {
+	return xxx_messageInfo_ResGenerateToken.Size(m)
 }
-func (m *ResBytes) XXX_DiscardUnknown() {
-	xxx_messageInfo_ResBytes.DiscardUnknown(m)
+func (m *ResGenerateToken) XXX_DiscardUnknown() {
+	xxx_messageInfo_ResGenerateToken.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_ResBytes proto.InternalMessageInfo
+var xxx_messageInfo_ResGenerateToken proto.InternalMessageInfo
 
-func (m *ResBytes) GetBytes() []byte {
+func (m *ResGenerateToken) GetToken() string {
 	if m != nil {
-		return m.Bytes
+		return m.Token
 	}
-	return nil
+	return ""
 }
 
-type CmdSets struct {
-	File                 string   `protobuf:"bytes,1,opt,name=file,proto3" json:"file,omitempty"`
-	Keys                 [][]byte `protobuf:"bytes,2,rep,name=keys,proto3" json:"keys,omitempty"`
+type ResValidateToken struct {
+	UserID               string   `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *CmdSets) Reset()         { *m = CmdSets{} }
-func (m *CmdSets) String() string { return proto.CompactTextString(m) }
-func (*CmdSets) ProtoMessage()    {}
-func (*CmdSets) Descriptor() ([]byte, []int) {
+func (m *ResValidateToken) Reset()         { *m = ResValidateToken{} }
+func (m *ResValidateToken) String() string { return proto.CompactTextString(m) }
+func (*ResValidateToken) ProtoMessage()    {}
+func (*ResValidateToken) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00212fb1f9d3bf1c, []int{5}
 }
 
-func (m *CmdSets) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CmdSets.Unmarshal(m, b)
+func (m *ResValidateToken) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ResValidateToken.Unmarshal(m, b)
 }
-func (m *CmdSets) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CmdSets.Marshal(b, m, deterministic)
+func (m *ResValidateToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ResValidateToken.Marshal(b, m, deterministic)
 }
-func (m *CmdSets) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CmdSets.Merge(m, src)
+func (m *ResValidateToken) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ResValidateToken.Merge(m, src)
 }
-func (m *CmdSets) XXX_Size() int {
-	return xxx_messageInfo_CmdSets.Size(m)
+func (m *ResValidateToken) XXX_Size() int {
+	return xxx_messageInfo_ResValidateToken.Size(m)
 }
-func (m *CmdSets) XXX_DiscardUnknown() {
-	xxx_messageInfo_CmdSets.DiscardUnknown(m)
+func (m *ResValidateToken) XXX_DiscardUnknown() {
+	xxx_messageInfo_ResValidateToken.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_CmdSets proto.InternalMessageInfo
+var xxx_messageInfo_ResValidateToken proto.InternalMessageInfo
 
-func (m *CmdSets) GetFile() string {
+func (m *ResValidateToken) GetUserID() string {
 	if m != nil {
-		return m.File
-	}
-	return ""
-}
-
-func (m *CmdSets) GetKeys() [][]byte {
-	if m != nil {
-		return m.Keys
-	}
-	return nil
-}
-
-type CmdKeys struct {
-	File                 string   `protobuf:"bytes,1,opt,name=file,proto3" json:"file,omitempty"`
-	From                 []byte   `protobuf:"bytes,2,opt,name=from,proto3" json:"from,omitempty"`
-	Limit                uint32   `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
-	Offset               uint32   `protobuf:"varint,4,opt,name=offset,proto3" json:"offset,omitempty"`
-	Asc                  bool     `protobuf:"varint,5,opt,name=asc,proto3" json:"asc,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *CmdKeys) Reset()         { *m = CmdKeys{} }
-func (m *CmdKeys) String() string { return proto.CompactTextString(m) }
-func (*CmdKeys) ProtoMessage()    {}
-func (*CmdKeys) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{6}
-}
-
-func (m *CmdKeys) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CmdKeys.Unmarshal(m, b)
-}
-func (m *CmdKeys) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CmdKeys.Marshal(b, m, deterministic)
-}
-func (m *CmdKeys) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CmdKeys.Merge(m, src)
-}
-func (m *CmdKeys) XXX_Size() int {
-	return xxx_messageInfo_CmdKeys.Size(m)
-}
-func (m *CmdKeys) XXX_DiscardUnknown() {
-	xxx_messageInfo_CmdKeys.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_CmdKeys proto.InternalMessageInfo
-
-func (m *CmdKeys) GetFile() string {
-	if m != nil {
-		return m.File
-	}
-	return ""
-}
-
-func (m *CmdKeys) GetFrom() []byte {
-	if m != nil {
-		return m.From
-	}
-	return nil
-}
-
-func (m *CmdKeys) GetLimit() uint32 {
-	if m != nil {
-		return m.Limit
-	}
-	return 0
-}
-
-func (m *CmdKeys) GetOffset() uint32 {
-	if m != nil {
-		return m.Offset
-	}
-	return 0
-}
-
-func (m *CmdKeys) GetAsc() bool {
-	if m != nil {
-		return m.Asc
-	}
-	return false
-}
-
-type ResKeys struct {
-	Keys                 [][]byte `protobuf:"bytes,1,rep,name=keys,proto3" json:"keys,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *ResKeys) Reset()         { *m = ResKeys{} }
-func (m *ResKeys) String() string { return proto.CompactTextString(m) }
-func (*ResKeys) ProtoMessage()    {}
-func (*ResKeys) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{7}
-}
-
-func (m *ResKeys) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_ResKeys.Unmarshal(m, b)
-}
-func (m *ResKeys) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_ResKeys.Marshal(b, m, deterministic)
-}
-func (m *ResKeys) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ResKeys.Merge(m, src)
-}
-func (m *ResKeys) XXX_Size() int {
-	return xxx_messageInfo_ResKeys.Size(m)
-}
-func (m *ResKeys) XXX_DiscardUnknown() {
-	xxx_messageInfo_ResKeys.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_ResKeys proto.InternalMessageInfo
-
-func (m *ResKeys) GetKeys() [][]byte {
-	if m != nil {
-		return m.Keys
-	}
-	return nil
-}
-
-type CmdGets struct {
-	File                 string   `protobuf:"bytes,1,opt,name=file,proto3" json:"file,omitempty"`
-	Keys                 [][]byte `protobuf:"bytes,2,rep,name=keys,proto3" json:"keys,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *CmdGets) Reset()         { *m = CmdGets{} }
-func (m *CmdGets) String() string { return proto.CompactTextString(m) }
-func (*CmdGets) ProtoMessage()    {}
-func (*CmdGets) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{8}
-}
-
-func (m *CmdGets) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CmdGets.Unmarshal(m, b)
-}
-func (m *CmdGets) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CmdGets.Marshal(b, m, deterministic)
-}
-func (m *CmdGets) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CmdGets.Merge(m, src)
-}
-func (m *CmdGets) XXX_Size() int {
-	return xxx_messageInfo_CmdGets.Size(m)
-}
-func (m *CmdGets) XXX_DiscardUnknown() {
-	xxx_messageInfo_CmdGets.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_CmdGets proto.InternalMessageInfo
-
-func (m *CmdGets) GetFile() string {
-	if m != nil {
-		return m.File
-	}
-	return ""
-}
-
-func (m *CmdGets) GetKeys() [][]byte {
-	if m != nil {
-		return m.Keys
-	}
-	return nil
-}
-
-type ResPairs struct {
-	Pairs                [][]byte `protobuf:"bytes,1,rep,name=pairs,proto3" json:"pairs,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *ResPairs) Reset()         { *m = ResPairs{} }
-func (m *ResPairs) String() string { return proto.CompactTextString(m) }
-func (*ResPairs) ProtoMessage()    {}
-func (*ResPairs) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{9}
-}
-
-func (m *ResPairs) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_ResPairs.Unmarshal(m, b)
-}
-func (m *ResPairs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_ResPairs.Marshal(b, m, deterministic)
-}
-func (m *ResPairs) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ResPairs.Merge(m, src)
-}
-func (m *ResPairs) XXX_Size() int {
-	return xxx_messageInfo_ResPairs.Size(m)
-}
-func (m *ResPairs) XXX_DiscardUnknown() {
-	xxx_messageInfo_ResPairs.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_ResPairs proto.InternalMessageInfo
-
-func (m *ResPairs) GetPairs() [][]byte {
-	if m != nil {
-		return m.Pairs
-	}
-	return nil
-}
-
-type CmdDel struct {
-	File                 string   `protobuf:"bytes,1,opt,name=file,proto3" json:"file,omitempty"`
-	Key                  []byte   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *CmdDel) Reset()         { *m = CmdDel{} }
-func (m *CmdDel) String() string { return proto.CompactTextString(m) }
-func (*CmdDel) ProtoMessage()    {}
-func (*CmdDel) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{10}
-}
-
-func (m *CmdDel) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CmdDel.Unmarshal(m, b)
-}
-func (m *CmdDel) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CmdDel.Marshal(b, m, deterministic)
-}
-func (m *CmdDel) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CmdDel.Merge(m, src)
-}
-func (m *CmdDel) XXX_Size() int {
-	return xxx_messageInfo_CmdDel.Size(m)
-}
-func (m *CmdDel) XXX_DiscardUnknown() {
-	xxx_messageInfo_CmdDel.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_CmdDel proto.InternalMessageInfo
-
-func (m *CmdDel) GetFile() string {
-	if m != nil {
-		return m.File
-	}
-	return ""
-}
-
-func (m *CmdDel) GetKey() []byte {
-	if m != nil {
-		return m.Key
-	}
-	return nil
-}
-
-type ResDel struct {
-	Deleted              bool     `protobuf:"varint,1,opt,name=deleted,proto3" json:"deleted,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *ResDel) Reset()         { *m = ResDel{} }
-func (m *ResDel) String() string { return proto.CompactTextString(m) }
-func (*ResDel) ProtoMessage()    {}
-func (*ResDel) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{11}
-}
-
-func (m *ResDel) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_ResDel.Unmarshal(m, b)
-}
-func (m *ResDel) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_ResDel.Marshal(b, m, deterministic)
-}
-func (m *ResDel) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ResDel.Merge(m, src)
-}
-func (m *ResDel) XXX_Size() int {
-	return xxx_messageInfo_ResDel.Size(m)
-}
-func (m *ResDel) XXX_DiscardUnknown() {
-	xxx_messageInfo_ResDel.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_ResDel proto.InternalMessageInfo
-
-func (m *ResDel) GetDeleted() bool {
-	if m != nil {
-		return m.Deleted
-	}
-	return false
-}
-
-type CmdDelFile struct {
-	File                 string   `protobuf:"bytes,1,opt,name=file,proto3" json:"file,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *CmdDelFile) Reset()         { *m = CmdDelFile{} }
-func (m *CmdDelFile) String() string { return proto.CompactTextString(m) }
-func (*CmdDelFile) ProtoMessage()    {}
-func (*CmdDelFile) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{12}
-}
-
-func (m *CmdDelFile) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CmdDelFile.Unmarshal(m, b)
-}
-func (m *CmdDelFile) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CmdDelFile.Marshal(b, m, deterministic)
-}
-func (m *CmdDelFile) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CmdDelFile.Merge(m, src)
-}
-func (m *CmdDelFile) XXX_Size() int {
-	return xxx_messageInfo_CmdDelFile.Size(m)
-}
-func (m *CmdDelFile) XXX_DiscardUnknown() {
-	xxx_messageInfo_CmdDelFile.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_CmdDelFile proto.InternalMessageInfo
-
-func (m *CmdDelFile) GetFile() string {
-	if m != nil {
-		return m.File
+		return m.UserID
 	}
 	return ""
 }
@@ -606,50 +253,30 @@ func (m *CmdDelFile) GetFile() string {
 func init() {
 	proto.RegisterType((*Ok)(nil), "api.Ok")
 	proto.RegisterType((*Empty)(nil), "api.Empty")
-	proto.RegisterType((*CmdSet)(nil), "api.CmdSet")
-	proto.RegisterType((*CmdGet)(nil), "api.CmdGet")
-	proto.RegisterType((*ResBytes)(nil), "api.ResBytes")
-	proto.RegisterType((*CmdSets)(nil), "api.CmdSets")
-	proto.RegisterType((*CmdKeys)(nil), "api.CmdKeys")
-	proto.RegisterType((*ResKeys)(nil), "api.ResKeys")
-	proto.RegisterType((*CmdGets)(nil), "api.CmdGets")
-	proto.RegisterType((*ResPairs)(nil), "api.ResPairs")
-	proto.RegisterType((*CmdDel)(nil), "api.CmdDel")
-	proto.RegisterType((*ResDel)(nil), "api.ResDel")
-	proto.RegisterType((*CmdDelFile)(nil), "api.CmdDelFile")
+	proto.RegisterType((*CmdGenerateToken)(nil), "api.CmdGenerateToken")
+	proto.RegisterType((*CmdValidateToken)(nil), "api.CmdValidateToken")
+	proto.RegisterType((*ResGenerateToken)(nil), "api.ResGenerateToken")
+	proto.RegisterType((*ResValidateToken)(nil), "api.ResValidateToken")
 }
 
 func init() { proto.RegisterFile("api.proto", fileDescriptor_00212fb1f9d3bf1c) }
 
 var fileDescriptor_00212fb1f9d3bf1c = []byte{
-	// 426 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x53, 0xed, 0x8a, 0xd4, 0x40,
-	0x10, 0xcc, 0xd7, 0x26, 0x7b, 0x7d, 0x39, 0x94, 0x41, 0x24, 0x04, 0x3c, 0x42, 0xab, 0xb0, 0x20,
-	0x2c, 0xa8, 0x2f, 0x20, 0xba, 0x9a, 0x1f, 0xfe, 0x58, 0x99, 0x7b, 0x82, 0x59, 0xb7, 0x57, 0x42,
-	0x26, 0x6c, 0xdc, 0x19, 0x0e, 0xf2, 0x54, 0xbe, 0xa2, 0x4c, 0xcf, 0x8e, 0x97, 0x3b, 0x14, 0xce,
-	0x7f, 0x55, 0x4d, 0x75, 0x4d, 0x77, 0xa5, 0x03, 0x17, 0x6a, 0xec, 0xd6, 0xe3, 0xe9, 0x68, 0x8f,
-	0x22, 0x55, 0x63, 0x87, 0xd7, 0x90, 0x6c, 0x7b, 0x51, 0x41, 0x31, 0x90, 0x31, 0xea, 0x07, 0x55,
-	0x71, 0x13, 0xaf, 0x2e, 0x64, 0xa0, 0x58, 0xc0, 0xe2, 0xf3, 0x30, 0xda, 0x09, 0x3f, 0x40, 0xfe,
-	0x69, 0xd8, 0xdf, 0x90, 0x15, 0x02, 0xb2, 0x43, 0xa7, 0x83, 0x92, 0xb1, 0x78, 0x0a, 0x69, 0x4f,
-	0x53, 0x95, 0x34, 0xf1, 0xaa, 0x94, 0x0e, 0xba, 0xca, 0xad, 0xd2, 0x55, 0xea, 0x2b, 0xb7, 0x4a,
-	0xe3, 0x9a, 0x1d, 0xda, 0xc7, 0x3a, 0x60, 0x03, 0x4b, 0x49, 0xe6, 0xe3, 0x64, 0xc9, 0x88, 0x67,
-	0xb0, 0xd8, 0x39, 0xc0, 0x2d, 0xa5, 0xf4, 0x04, 0xdf, 0x42, 0xe1, 0x67, 0x32, 0x7f, 0xb5, 0x14,
-	0x90, 0xf5, 0x34, 0x99, 0x2a, 0x69, 0xd2, 0x55, 0x29, 0x19, 0xe3, 0x4f, 0x6e, 0xf9, 0x4a, 0xd3,
-	0x3f, 0x5b, 0x0e, 0xa7, 0xe3, 0x70, 0x1e, 0x83, 0xb1, 0x7b, 0x5b, 0x77, 0x43, 0x67, 0x79, 0x97,
-	0x2b, 0xe9, 0x89, 0x78, 0x0e, 0xf9, 0xf1, 0x70, 0x30, 0x64, 0xab, 0x8c, 0xcb, 0x67, 0xe6, 0xf6,
-	0x50, 0xe6, 0x7b, 0xb5, 0x68, 0xe2, 0xd5, 0x52, 0x3a, 0x88, 0x2f, 0xa0, 0x90, 0x64, 0xc2, 0x93,
-	0x3c, 0x51, 0x3c, 0x9b, 0xc8, 0x2f, 0xd1, 0xfe, 0xcf, 0x12, 0x3e, 0x99, 0x6f, 0xaa, 0x3b, 0x71,
-	0x32, 0xa3, 0x03, 0x67, 0x4f, 0x4f, 0xce, 0x59, 0x6f, 0x48, 0x3f, 0x32, 0x6b, 0x84, 0x5c, 0x92,
-	0x71, 0xfa, 0x0a, 0x8a, 0x3d, 0x69, 0xb2, 0xb4, 0xe7, 0x96, 0xa5, 0x0c, 0x14, 0x1b, 0x00, 0xef,
-	0xf9, 0x25, 0x24, 0xf5, 0xc0, 0xf7, 0xdd, 0xaf, 0x04, 0x92, 0xfd, 0x4e, 0x5c, 0xc3, 0xe2, 0x46,
-	0x4d, 0xdb, 0x5e, 0xc0, 0xda, 0x5d, 0x1b, 0xdf, 0x4f, 0x5d, 0x30, 0xde, 0xf6, 0x18, 0x89, 0x06,
-	0x52, 0x77, 0x47, 0x97, 0x5c, 0xf1, 0x1f, 0xb0, 0x9e, 0x49, 0x31, 0x12, 0x2f, 0x21, 0x6d, 0xe7,
-	0x8a, 0x96, 0x6c, 0x7d, 0xc5, 0x24, 0x5c, 0x04, 0x46, 0x02, 0x21, 0xe3, 0x4f, 0x5f, 0xce, 0x7c,
-	0xcc, 0x03, 0xa3, 0x57, 0x90, 0x71, 0xf0, 0x7f, 0x34, 0x8e, 0xd5, 0x65, 0xb0, 0x72, 0x0c, 0x23,
-	0xf1, 0x1a, 0xb2, 0xf6, 0x9e, 0x93, 0x63, 0x77, 0x0f, 0x72, 0xd0, 0x6c, 0x96, 0x6f, 0x38, 0x8b,
-	0xbb, 0xc1, 0x36, 0xa4, 0xeb, 0xcb, 0xa0, 0xdb, 0x90, 0xc6, 0x48, 0xbc, 0x01, 0xf0, 0x2a, 0x8e,
-	0xe9, 0xc9, 0x4c, 0xe9, 0x0a, 0xf7, 0xe7, 0xdb, 0xe5, 0xfc, 0x2b, 0xbe, 0xff, 0x1d, 0x00, 0x00,
-	0xff, 0xff, 0xab, 0xb2, 0xfd, 0xd4, 0x97, 0x03, 0x00, 0x00,
+	// 216 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x4c, 0x2c, 0xc8, 0xd4,
+	0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x4e, 0x2c, 0xc8, 0x54, 0x92, 0xe3, 0x62, 0xf2, 0xcf,
+	0x16, 0x92, 0xe0, 0x62, 0xcf, 0x4d, 0x2d, 0x2e, 0x4e, 0x4c, 0x4f, 0x95, 0x60, 0x54, 0x60, 0xd4,
+	0xe0, 0x0c, 0x82, 0x71, 0x95, 0xd8, 0xb9, 0x58, 0x5d, 0x73, 0x0b, 0x4a, 0x2a, 0x95, 0xb4, 0xb8,
+	0x04, 0x9c, 0x73, 0x53, 0xdc, 0x53, 0xf3, 0x52, 0x8b, 0x12, 0x4b, 0x52, 0x43, 0xf2, 0xb3, 0x53,
+	0xf3, 0x84, 0xc4, 0xb8, 0xd8, 0x4a, 0x8b, 0x53, 0x8b, 0x3c, 0x5d, 0xa0, 0xba, 0xa0, 0x3c, 0x25,
+	0x0d, 0xb0, 0xda, 0xb0, 0xc4, 0x9c, 0xcc, 0x14, 0xb8, 0x5a, 0x11, 0x2e, 0xd6, 0x12, 0x10, 0x03,
+	0xaa, 0x14, 0xc2, 0x01, 0xa9, 0x0c, 0x4a, 0x2d, 0x46, 0x35, 0x15, 0xbb, 0x4a, 0x2d, 0xb0, 0x4a,
+	0x54, 0x33, 0x71, 0xd8, 0x6f, 0xb4, 0x82, 0x91, 0x8b, 0xc5, 0x3f, 0x3b, 0x25, 0x49, 0x48, 0x8e,
+	0x8b, 0x35, 0x38, 0xb1, 0xd2, 0x3f, 0x5b, 0x88, 0x4b, 0x0f, 0xe4, 0x6f, 0xb0, 0x4f, 0xa4, 0xd8,
+	0xc1, 0x6c, 0xff, 0x6c, 0x25, 0x06, 0x21, 0x7b, 0x2e, 0x5e, 0x54, 0xbb, 0x45, 0xc1, 0x72, 0xe8,
+	0x1e, 0x95, 0x82, 0x08, 0xa3, 0xbb, 0x14, 0x62, 0x00, 0xaa, 0x93, 0xe0, 0x06, 0xa0, 0x08, 0x23,
+	0x0c, 0x40, 0x11, 0x56, 0x62, 0x48, 0x62, 0x03, 0xc7, 0x85, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff,
+	0x4f, 0xa9, 0xda, 0x55, 0x98, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -660,324 +287,144 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// DbClient is the client API for Db service.
+// OkdbClient is the client API for Okdb service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type DbClient interface {
+type OkdbClient interface {
 	SayOk(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Ok, error)
-	Set(ctx context.Context, in *CmdSet, opts ...grpc.CallOption) (*Empty, error)
-	Get(ctx context.Context, in *CmdGet, opts ...grpc.CallOption) (*ResBytes, error)
-	Sets(ctx context.Context, in *CmdSets, opts ...grpc.CallOption) (*Empty, error)
-	Keys(ctx context.Context, in *CmdKeys, opts ...grpc.CallOption) (*ResKeys, error)
-	Gets(ctx context.Context, in *CmdGets, opts ...grpc.CallOption) (*ResPairs, error)
-	Delete(ctx context.Context, in *CmdDel, opts ...grpc.CallOption) (*ResDel, error)
-	DeleteFile(ctx context.Context, in *CmdDelFile, opts ...grpc.CallOption) (*Empty, error)
+	GenerateToken(ctx context.Context, in *CmdGenerateToken, opts ...grpc.CallOption) (*ResGenerateToken, error)
+	ValidateToken(ctx context.Context, in *CmdValidateToken, opts ...grpc.CallOption) (*ResValidateToken, error)
 }
 
-type dbClient struct {
+type okdbClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDbClient(cc grpc.ClientConnInterface) DbClient {
-	return &dbClient{cc}
+func NewOkdbClient(cc grpc.ClientConnInterface) OkdbClient {
+	return &okdbClient{cc}
 }
 
-func (c *dbClient) SayOk(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Ok, error) {
+func (c *okdbClient) SayOk(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Ok, error) {
 	out := new(Ok)
-	err := c.cc.Invoke(ctx, "/api.db/SayOk", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.Okdb/SayOk", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dbClient) Set(ctx context.Context, in *CmdSet, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
-	err := c.cc.Invoke(ctx, "/api.db/Set", in, out, opts...)
+func (c *okdbClient) GenerateToken(ctx context.Context, in *CmdGenerateToken, opts ...grpc.CallOption) (*ResGenerateToken, error) {
+	out := new(ResGenerateToken)
+	err := c.cc.Invoke(ctx, "/api.Okdb/GenerateToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dbClient) Get(ctx context.Context, in *CmdGet, opts ...grpc.CallOption) (*ResBytes, error) {
-	out := new(ResBytes)
-	err := c.cc.Invoke(ctx, "/api.db/Get", in, out, opts...)
+func (c *okdbClient) ValidateToken(ctx context.Context, in *CmdValidateToken, opts ...grpc.CallOption) (*ResValidateToken, error) {
+	out := new(ResValidateToken)
+	err := c.cc.Invoke(ctx, "/api.Okdb/ValidateToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dbClient) Sets(ctx context.Context, in *CmdSets, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
-	err := c.cc.Invoke(ctx, "/api.db/Sets", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dbClient) Keys(ctx context.Context, in *CmdKeys, opts ...grpc.CallOption) (*ResKeys, error) {
-	out := new(ResKeys)
-	err := c.cc.Invoke(ctx, "/api.db/Keys", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dbClient) Gets(ctx context.Context, in *CmdGets, opts ...grpc.CallOption) (*ResPairs, error) {
-	out := new(ResPairs)
-	err := c.cc.Invoke(ctx, "/api.db/Gets", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dbClient) Delete(ctx context.Context, in *CmdDel, opts ...grpc.CallOption) (*ResDel, error) {
-	out := new(ResDel)
-	err := c.cc.Invoke(ctx, "/api.db/Delete", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *dbClient) DeleteFile(ctx context.Context, in *CmdDelFile, opts ...grpc.CallOption) (*Empty, error) {
-	out := new(Empty)
-	err := c.cc.Invoke(ctx, "/api.db/DeleteFile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// DbServer is the server API for Db service.
-type DbServer interface {
+// OkdbServer is the server API for Okdb service.
+type OkdbServer interface {
 	SayOk(context.Context, *Empty) (*Ok, error)
-	Set(context.Context, *CmdSet) (*Empty, error)
-	Get(context.Context, *CmdGet) (*ResBytes, error)
-	Sets(context.Context, *CmdSets) (*Empty, error)
-	Keys(context.Context, *CmdKeys) (*ResKeys, error)
-	Gets(context.Context, *CmdGets) (*ResPairs, error)
-	Delete(context.Context, *CmdDel) (*ResDel, error)
-	DeleteFile(context.Context, *CmdDelFile) (*Empty, error)
+	GenerateToken(context.Context, *CmdGenerateToken) (*ResGenerateToken, error)
+	ValidateToken(context.Context, *CmdValidateToken) (*ResValidateToken, error)
 }
 
-// UnimplementedDbServer can be embedded to have forward compatible implementations.
-type UnimplementedDbServer struct {
+// UnimplementedOkdbServer can be embedded to have forward compatible implementations.
+type UnimplementedOkdbServer struct {
 }
 
-func (*UnimplementedDbServer) SayOk(ctx context.Context, req *Empty) (*Ok, error) {
+func (*UnimplementedOkdbServer) SayOk(ctx context.Context, req *Empty) (*Ok, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SayOk not implemented")
 }
-func (*UnimplementedDbServer) Set(ctx context.Context, req *CmdSet) (*Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Set not implemented")
+func (*UnimplementedOkdbServer) GenerateToken(ctx context.Context, req *CmdGenerateToken) (*ResGenerateToken, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateToken not implemented")
 }
-func (*UnimplementedDbServer) Get(ctx context.Context, req *CmdGet) (*ResBytes, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
-}
-func (*UnimplementedDbServer) Sets(ctx context.Context, req *CmdSets) (*Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Sets not implemented")
-}
-func (*UnimplementedDbServer) Keys(ctx context.Context, req *CmdKeys) (*ResKeys, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Keys not implemented")
-}
-func (*UnimplementedDbServer) Gets(ctx context.Context, req *CmdGets) (*ResPairs, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Gets not implemented")
-}
-func (*UnimplementedDbServer) Delete(ctx context.Context, req *CmdDel) (*ResDel, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
-}
-func (*UnimplementedDbServer) DeleteFile(ctx context.Context, req *CmdDelFile) (*Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteFile not implemented")
+func (*UnimplementedOkdbServer) ValidateToken(ctx context.Context, req *CmdValidateToken) (*ResValidateToken, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ValidateToken not implemented")
 }
 
-func RegisterDbServer(s *grpc.Server, srv DbServer) {
-	s.RegisterService(&_Db_serviceDesc, srv)
+func RegisterOkdbServer(s *grpc.Server, srv OkdbServer) {
+	s.RegisterService(&_Okdb_serviceDesc, srv)
 }
 
-func _Db_SayOk_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Okdb_SayOk_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DbServer).SayOk(ctx, in)
+		return srv.(OkdbServer).SayOk(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.db/SayOk",
+		FullMethod: "/api.Okdb/SayOk",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DbServer).SayOk(ctx, req.(*Empty))
+		return srv.(OkdbServer).SayOk(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Db_Set_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CmdSet)
+func _Okdb_GenerateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CmdGenerateToken)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DbServer).Set(ctx, in)
+		return srv.(OkdbServer).GenerateToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.db/Set",
+		FullMethod: "/api.Okdb/GenerateToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DbServer).Set(ctx, req.(*CmdSet))
+		return srv.(OkdbServer).GenerateToken(ctx, req.(*CmdGenerateToken))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Db_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CmdGet)
+func _Okdb_ValidateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CmdValidateToken)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DbServer).Get(ctx, in)
+		return srv.(OkdbServer).ValidateToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.db/Get",
+		FullMethod: "/api.Okdb/ValidateToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DbServer).Get(ctx, req.(*CmdGet))
+		return srv.(OkdbServer).ValidateToken(ctx, req.(*CmdValidateToken))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Db_Sets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CmdSets)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DbServer).Sets(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.db/Sets",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DbServer).Sets(ctx, req.(*CmdSets))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Db_Keys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CmdKeys)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DbServer).Keys(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.db/Keys",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DbServer).Keys(ctx, req.(*CmdKeys))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Db_Gets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CmdGets)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DbServer).Gets(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.db/Gets",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DbServer).Gets(ctx, req.(*CmdGets))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Db_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CmdDel)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DbServer).Delete(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.db/Delete",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DbServer).Delete(ctx, req.(*CmdDel))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Db_DeleteFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CmdDelFile)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DbServer).DeleteFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.db/DeleteFile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DbServer).DeleteFile(ctx, req.(*CmdDelFile))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _Db_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.db",
-	HandlerType: (*DbServer)(nil),
+var _Okdb_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.Okdb",
+	HandlerType: (*OkdbServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "SayOk",
-			Handler:    _Db_SayOk_Handler,
+			Handler:    _Okdb_SayOk_Handler,
 		},
 		{
-			MethodName: "Set",
-			Handler:    _Db_Set_Handler,
+			MethodName: "GenerateToken",
+			Handler:    _Okdb_GenerateToken_Handler,
 		},
 		{
-			MethodName: "Get",
-			Handler:    _Db_Get_Handler,
-		},
-		{
-			MethodName: "Sets",
-			Handler:    _Db_Sets_Handler,
-		},
-		{
-			MethodName: "Keys",
-			Handler:    _Db_Keys_Handler,
-		},
-		{
-			MethodName: "Gets",
-			Handler:    _Db_Gets_Handler,
-		},
-		{
-			MethodName: "Delete",
-			Handler:    _Db_Delete_Handler,
-		},
-		{
-			MethodName: "DeleteFile",
-			Handler:    _Db_DeleteFile_Handler,
+			MethodName: "ValidateToken",
+			Handler:    _Okdb_ValidateToken_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

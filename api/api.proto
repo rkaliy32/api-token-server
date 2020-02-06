@@ -8,67 +8,25 @@ message Ok {
 
 message Empty {}
 
-message CmdSet {
-  string file = 1;
-  bytes key = 2;
-  bytes val = 3;
+
+message CmdGenerateToken {
+  string userID = 1;
 }
 
-message CmdGet {
-  string file = 1;
-  bytes key = 2;
+message CmdValidateToken {
+  string token = 1;
 }
 
-message ResBytes {
-  bytes bytes = 1;
+message ResGenerateToken {
+  string token = 1;
 }
 
-message CmdSets {
-  string file = 1;
-  repeated bytes keys = 2; 
+message ResValidateToken {
+  string userID = 1;
 }
 
-message CmdKeys {
-  string file = 1;
-  bytes from = 2;
-  uint32 limit = 3;
-  uint32 offset = 4;
-  bool asc = 5;
-}
-
-message ResKeys {
-  repeated bytes keys = 1;
-}
-
-message CmdGets {
-  string file = 1;
-  repeated bytes keys = 2;
-}
-
-message ResPairs {
-  repeated bytes pairs = 1;
-}
-
-message CmdDel {
-  string file = 1;
-  bytes key = 2;
-}
-
-message ResDel {
-  bool deleted = 1;
-}
-
-message CmdDelFile {
-  string file = 1;
-}
-
-service db {
+service Okdb {
   rpc SayOk(Empty) returns (Ok) {}
-  rpc Set(CmdSet) returns (Empty) {}
-  rpc Get(CmdGet) returns (ResBytes) {}
-  rpc Sets(CmdSets) returns (Empty) {}
-  rpc Keys(CmdKeys) returns (ResKeys) {}
-  rpc Gets(CmdGets) returns (ResPairs) {}
-  rpc Delete(CmdDel) returns (ResDel) {}
-  rpc DeleteFile(CmdDelFile) returns (Empty) {}
+  rpc GenerateToken(CmdGenerateToken) returns (ResGenerateToken) {}
+  rpc ValidateToken(CmdValidateToken) returns (ResValidateToken) {}
 }

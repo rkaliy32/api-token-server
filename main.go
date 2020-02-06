@@ -11,7 +11,7 @@ import (
 	"syscall"
 
 	"github.com/rkaliy32/api-token-server/api"
-	"github.com/rkaliy32/api-token-server/slowpoke"
+	"github.com/rkaliy32/api-token-server/pudge"
 	"google.golang.org/grpc"
 )
 
@@ -35,7 +35,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 
 	// attach the Ping service to the server
-	api.RegisterDbServer(grpcServer, &s)
+	api.RegisterOkdbServer(grpcServer, &s)
 
 	// start the server
 	go func() {
@@ -51,7 +51,7 @@ func main() {
 	<-signalChan
 
 	log.Println("Shutdown signal received, exiting...")
-	closeErr := slowpoke.CloseAll()
+	closeErr := pudge.CloseAll()
 	if closeErr != nil {
 		log.Fatal(closeErr.Error())
 	}
@@ -62,10 +62,10 @@ func main() {
 // default addr: ":5000"
 // example usage ./okdb -http=":5000">>simpleserver.log &
 func Serve(addr string) {
-	http.HandleFunc("/slowpoke/", handlerSlowPoke)
+	http.HandleFunc("/requesthandler/", requesthandler)
 	log.Fatal(http.ListenAndServe(addr, nil))
 }
 
-func handlerSlowPoke(w http.ResponseWriter, r *http.Request) {
+func requesthandler(w http.ResponseWriter, r *http.Request) {
 	api.Parser(w, r)
 }
