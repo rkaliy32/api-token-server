@@ -25,7 +25,7 @@ message ResValidateToken {
   string userID = 1;
 }
 
-service Okdb {
+service db {
   rpc SayOk(Empty) returns (Ok) {}
   rpc GenerateToken(CmdGenerateToken) returns (ResGenerateToken) {}
   rpc ValidateToken(CmdValidateToken) returns (ResValidateToken) {}

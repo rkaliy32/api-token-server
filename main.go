@@ -10,8 +10,8 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/recoilme/pudge"
 	"github.com/rkaliy32/api-token-server/api"
-	"github.com/rkaliy32/api-token-server/pudge"
 	"google.golang.org/grpc"
 )
 
@@ -35,7 +35,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 
 	// attach the Ping service to the server
-	api.RegisterOkdbServer(grpcServer, &s)
+	api.RegisterDbServer(grpcServer, &s)
 
 	// start the server
 	go func() {

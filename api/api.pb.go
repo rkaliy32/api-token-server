@@ -262,7 +262,7 @@ func init() {
 func init() { proto.RegisterFile("api.proto", fileDescriptor_00212fb1f9d3bf1c) }
 
 var fileDescriptor_00212fb1f9d3bf1c = []byte{
-	// 216 bytes of a gzipped FileDescriptorProto
+	// 214 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x4c, 0x2c, 0xc8, 0xd4,
 	0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x4e, 0x2c, 0xc8, 0x54, 0x92, 0xe3, 0x62, 0xf2, 0xcf,
 	0x16, 0x92, 0xe0, 0x62, 0xcf, 0x4d, 0x2d, 0x2e, 0x4e, 0x4c, 0x4f, 0x95, 0x60, 0x54, 0x60, 0xd4,
@@ -271,12 +271,12 @@ var fileDescriptor_00212fb1f9d3bf1c = []byte{
 	0xf3, 0x84, 0xc4, 0xb8, 0xd8, 0x4a, 0x8b, 0x53, 0x8b, 0x3c, 0x5d, 0xa0, 0xba, 0xa0, 0x3c, 0x25,
 	0x0d, 0xb0, 0xda, 0xb0, 0xc4, 0x9c, 0xcc, 0x14, 0xb8, 0x5a, 0x11, 0x2e, 0xd6, 0x12, 0x10, 0x03,
 	0xaa, 0x14, 0xc2, 0x01, 0xa9, 0x0c, 0x4a, 0x2d, 0x46, 0x35, 0x15, 0xbb, 0x4a, 0x2d, 0xb0, 0x4a,
-	0x54, 0x33, 0x71, 0xd8, 0x6f, 0xb4, 0x82, 0x91, 0x8b, 0xc5, 0x3f, 0x3b, 0x25, 0x49, 0x48, 0x8e,
-	0x8b, 0x35, 0x38, 0xb1, 0xd2, 0x3f, 0x5b, 0x88, 0x4b, 0x0f, 0xe4, 0x6f, 0xb0, 0x4f, 0xa4, 0xd8,
-	0xc1, 0x6c, 0xff, 0x6c, 0x25, 0x06, 0x21, 0x7b, 0x2e, 0x5e, 0x54, 0xbb, 0x45, 0xc1, 0x72, 0xe8,
-	0x1e, 0x95, 0x82, 0x08, 0xa3, 0xbb, 0x14, 0x62, 0x00, 0xaa, 0x93, 0xe0, 0x06, 0xa0, 0x08, 0x23,
-	0x0c, 0x40, 0x11, 0x56, 0x62, 0x48, 0x62, 0x03, 0xc7, 0x85, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff,
-	0x4f, 0xa9, 0xda, 0x55, 0x98, 0x01, 0x00, 0x00,
+	0x54, 0x33, 0x71, 0xd8, 0x6f, 0xb4, 0x8c, 0x91, 0x8b, 0x29, 0x25, 0x49, 0x48, 0x8e, 0x8b, 0x35,
+	0x38, 0xb1, 0xd2, 0x3f, 0x5b, 0x88, 0x4b, 0x0f, 0xe4, 0x6b, 0xb0, 0x3f, 0xa4, 0xd8, 0xc1, 0x6c,
+	0xff, 0x6c, 0x25, 0x06, 0x21, 0x7b, 0x2e, 0x5e, 0x54, 0x9b, 0x45, 0xc1, 0x72, 0xe8, 0xde, 0x94,
+	0x82, 0x08, 0xa3, 0xbb, 0x13, 0x62, 0x00, 0xaa, 0x83, 0xe0, 0x06, 0xa0, 0x08, 0x23, 0x0c, 0x40,
+	0x11, 0x56, 0x62, 0x48, 0x62, 0x03, 0xc7, 0x84, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0x80, 0x31,
+	0x34, 0xf6, 0x96, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -287,144 +287,144 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// OkdbClient is the client API for Okdb service.
+// DbClient is the client API for Db service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type OkdbClient interface {
+type DbClient interface {
 	SayOk(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Ok, error)
 	GenerateToken(ctx context.Context, in *CmdGenerateToken, opts ...grpc.CallOption) (*ResGenerateToken, error)
 	ValidateToken(ctx context.Context, in *CmdValidateToken, opts ...grpc.CallOption) (*ResValidateToken, error)
 }
 
-type okdbClient struct {
+type dbClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewOkdbClient(cc grpc.ClientConnInterface) OkdbClient {
-	return &okdbClient{cc}
+func NewDbClient(cc grpc.ClientConnInterface) DbClient {
+	return &dbClient{cc}
 }
 
-func (c *okdbClient) SayOk(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Ok, error) {
+func (c *dbClient) SayOk(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Ok, error) {
 	out := new(Ok)
-	err := c.cc.Invoke(ctx, "/api.Okdb/SayOk", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.db/SayOk", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *okdbClient) GenerateToken(ctx context.Context, in *CmdGenerateToken, opts ...grpc.CallOption) (*ResGenerateToken, error) {
+func (c *dbClient) GenerateToken(ctx context.Context, in *CmdGenerateToken, opts ...grpc.CallOption) (*ResGenerateToken, error) {
 	out := new(ResGenerateToken)
-	err := c.cc.Invoke(ctx, "/api.Okdb/GenerateToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.db/GenerateToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *okdbClient) ValidateToken(ctx context.Context, in *CmdValidateToken, opts ...grpc.CallOption) (*ResValidateToken, error) {
+func (c *dbClient) ValidateToken(ctx context.Context, in *CmdValidateToken, opts ...grpc.CallOption) (*ResValidateToken, error) {
 	out := new(ResValidateToken)
-	err := c.cc.Invoke(ctx, "/api.Okdb/ValidateToken", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.db/ValidateToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// OkdbServer is the server API for Okdb service.
-type OkdbServer interface {
+// DbServer is the server API for Db service.
+type DbServer interface {
 	SayOk(context.Context, *Empty) (*Ok, error)
 	GenerateToken(context.Context, *CmdGenerateToken) (*ResGenerateToken, error)
 	ValidateToken(context.Context, *CmdValidateToken) (*ResValidateToken, error)
 }
 
-// UnimplementedOkdbServer can be embedded to have forward compatible implementations.
-type UnimplementedOkdbServer struct {
+// UnimplementedDbServer can be embedded to have forward compatible implementations.
+type UnimplementedDbServer struct {
 }
 
-func (*UnimplementedOkdbServer) SayOk(ctx context.Context, req *Empty) (*Ok, error) {
+func (*UnimplementedDbServer) SayOk(ctx context.Context, req *Empty) (*Ok, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SayOk not implemented")
 }
-func (*UnimplementedOkdbServer) GenerateToken(ctx context.Context, req *CmdGenerateToken) (*ResGenerateToken, error) {
+func (*UnimplementedDbServer) GenerateToken(ctx context.Context, req *CmdGenerateToken) (*ResGenerateToken, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateToken not implemented")
 }
-func (*UnimplementedOkdbServer) ValidateToken(ctx context.Context, req *CmdValidateToken) (*ResValidateToken, error) {
+func (*UnimplementedDbServer) ValidateToken(ctx context.Context, req *CmdValidateToken) (*ResValidateToken, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateToken not implemented")
 }
 
-func RegisterOkdbServer(s *grpc.Server, srv OkdbServer) {
-	s.RegisterService(&_Okdb_serviceDesc, srv)
+func RegisterDbServer(s *grpc.Server, srv DbServer) {
+	s.RegisterService(&_Db_serviceDesc, srv)
 }
 
-func _Okdb_SayOk_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Db_SayOk_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OkdbServer).SayOk(ctx, in)
+		return srv.(DbServer).SayOk(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.Okdb/SayOk",
+		FullMethod: "/api.db/SayOk",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OkdbServer).SayOk(ctx, req.(*Empty))
+		return srv.(DbServer).SayOk(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Okdb_GenerateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Db_GenerateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CmdGenerateToken)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OkdbServer).GenerateToken(ctx, in)
+		return srv.(DbServer).GenerateToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.Okdb/GenerateToken",
+		FullMethod: "/api.db/GenerateToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OkdbServer).GenerateToken(ctx, req.(*CmdGenerateToken))
+		return srv.(DbServer).GenerateToken(ctx, req.(*CmdGenerateToken))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Okdb_ValidateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Db_ValidateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CmdValidateToken)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OkdbServer).ValidateToken(ctx, in)
+		return srv.(DbServer).ValidateToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.Okdb/ValidateToken",
+		FullMethod: "/api.db/ValidateToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OkdbServer).ValidateToken(ctx, req.(*CmdValidateToken))
+		return srv.(DbServer).ValidateToken(ctx, req.(*CmdValidateToken))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _Okdb_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.Okdb",
-	HandlerType: (*OkdbServer)(nil),
+var _Db_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.db",
+	HandlerType: (*DbServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "SayOk",
-			Handler:    _Okdb_SayOk_Handler,
+			Handler:    _Db_SayOk_Handler,
 		},
 		{
 			MethodName: "GenerateToken",
-			Handler:    _Okdb_GenerateToken_Handler,
+			Handler:    _Db_GenerateToken_Handler,
 		},
 		{
 			MethodName: "ValidateToken",
-			Handler:    _Okdb_ValidateToken_Handler,
+			Handler:    _Db_ValidateToken_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

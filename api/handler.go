@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	guard "github.com/rkaliy32/api-token-server/guard"
-	"github.com/rkaliy32/api-token-server/pudge"
+	"github.com/recoilme/pudge"
+	guard "github.com/tomogoma/go-api-guard"
 	typedError "github.com/tomogoma/go-typed-errors"
 	"golang.org/x/net/context"
 )
